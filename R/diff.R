@@ -87,6 +87,7 @@ diff_element <- function(x, y, paths = c("x", "y"),
                          max_diffs = 10,
                          elementwise = FALSE,
                          width = getOption("width")) {
+  # Must normalize to UTF-8 before `encodeString()` (#66)
   x <- enc2utf8(x)
   y <- enc2utf8(y)
 
