@@ -7,11 +7,6 @@
 # * `rdl`: Delete the lines in range `r` from the first file; line `l` is
 #  where they would have appeared in the second file had they not been deleted.
 ses <- function(x, y, elementwise = FALSE) {
-  if (is.character(x)) {
-    x <- enc2utf8(x)
-    y <- enc2utf8(y)
-  }
-
   out <- diffobj::ses(
     x, y,
     max.diffs = if (elementwise) 1 else 100,
